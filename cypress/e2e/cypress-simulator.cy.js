@@ -1,57 +1,66 @@
-describe('Cypress Simulator', () => {
-  it('Success', () => {
+describe("Cypress Simulator", () => {
+
+  beforeEach(()=> {
+    cy.visit("./src/index.html?skipCaptcha=true", {
+      onBeforeLoad(win) {
+        win.localStorage.setItem("cookieConsent", "accepted")
+      }
+    })
+    cy.contains("button", "Login").click();
+  })
+  it("Success", () => {
  
   });
 
-  it('Error: invalid cypress command', () => {
+  it("Error: invalid cypress command", () => {
  
   });
 
-  it('Warning', () => {
+  it("Warning", () => {
  
   });
 
-  it('Error: valid command without parentheses', () => {
+  it("Error: valid command without parentheses", () => {
  
   });
 
-  it('Maximize/minimize', () => {
+  it("Maximize/minimize", () => {
  
   });
 
-  it('Running... state', () => {
+  it("Running... state", () => {
  
   });
 
-  it('Accept cookies', () => {
+  it("Accept cookies", () => {
  
   });
 
-  it('Decline cookies', () => {
+  it("Decline cookies", () => {
  
   });
 
-  it('Captcha button states', () => {
+  it("Captcha button states", () => {
  
   });
 
-  it('Captcha error', () => {
+  it("Captcha error", () => {
  
   });
 
-  it('Run button - enable/disable states', () => {
+  it("Run button - enable/disable states", () => {
  
   });
 
-  it('Reset text area on logout and login', () => {
+  it("Reset text area on logout and login", () => {
  
   });
 
-  it('Disable Run button on logout and login', () => {
+  it("Disable Run button on logout and login", () => {
  
   });
 
-  it('No cookies banner on login page', () => {
+  it("No cookies banner on login page", () => {
  
   });
 })
